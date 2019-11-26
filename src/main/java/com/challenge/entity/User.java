@@ -62,4 +62,12 @@ public class User {
     @JsonIgnore
     @OneToMany(mappedBy = "id.user")
     private List<Submission> submissions;
+
+    public User(User user) {
+        this.fullName = user.getFullName();
+        this.email = user.getEmail();
+        this.nickname = user.getNickname();
+        this.password = user.getPassword();
+        this.createdAt = user.getCreatedAt();
+    }
 }
